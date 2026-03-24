@@ -122,7 +122,7 @@ Codigo de la expresion regular:
 
 ^(calen|calma|carca|celeb|certar)$
 
-Programacion y pruebas de la expresion regular:
+Programación y pruebas de la expresion regular:
 
 La expresión regular se programó para reconocer únicamente las palabras válidas del lenguaje elven (calen, calma, carca, celeb y certar). El símbolo ^ indica el inicio de la cadena, () indica el grupo de caracteres, el operador | permite elegir entre distintas palabras válidas y por último $ indica el final de la cadena.
 
