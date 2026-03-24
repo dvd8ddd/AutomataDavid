@@ -1,0 +1,41 @@
+68 ?- recover_automaton([c,a,l,e,n]).
+true.
+
+69 ?- recover_automaton([c,a,l,m,a]).
+true.
+
+70 ?- recover_automaton([c,a,r,c,a]).
+true.
+
+71 ?- recover_automaton([c,e,l,e,b]).
+true.
+
+72 ?- recover_automaton([c,e,r,t,a,r]).
+true.
+
+73 ?- recover_automaton([c,a,l,e]).
+false.
+
+74 ?- recover_automaton([c,a,l,e,n,a]).
+false.
+
+75 ?- recover_automaton([c,a,l,e,b]).
+false.
+
+76 ?- recover_automaton([c,a,r,c,e]).
+false.
+
+77 ?- recover_automaton([c,e,l,e]).
+false.
+
+78 ?- recover_automaton([c,e,r,t,a]).
+false.
+
+79 ?- recover_automaton([c,a,s,a]).
+false.
+
+80 ?- recover_automaton([c,a,l,o,r]).
+false.
+
+81 ?- recover_automaton([c,e,l,e,b,b]).
+false.
