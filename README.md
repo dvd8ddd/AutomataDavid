@@ -138,4 +138,7 @@ Además la University of Illinois explica que los lenguajes regulares pueden rep
 
 Conclusiones 
 
+En este trabajo se comprobó que el lenguaje propuesto puede representarse tanto con un autómata finito como una expresión regular. Ambas soluciones aceptaron correctamente las palabras válidas y rechazaron las cadenas incorrectas, por lo que resultaron adecuadas para describir el lenguaje definido.
+
+El autómata finito se entiende mejor porque se puede dibujar y ver como funciona paso a paso, en cambio, la expresión regular es más corta y directa, por lo que resulta útil para escribir el código de forma más simple o para usarlo en programación (GeeksforGeeks,2026) . En general, este trabajo ayudó a comprender cómo se aplican los lenguajes regulares mediante dos herramientas distintas pero equivalentes.
 
