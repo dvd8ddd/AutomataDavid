@@ -148,8 +148,6 @@ Referencias
 GeeksforGeeks. (2026, 7 de marzo). Introduction of finite automata.
 https://www.geeksforgeeks.org/theory-of-computation/introduction-of-finite-automata/
 
-Gonzalez, T. (2024). Diseño de Autómatas Finitos Deterministas (DFA): una guía completa. ACADEMIA SANROQUE. https://academiasanroque.com/diseno-de-automatas-finitos-deterministas-dfa-una-guia-completa/
-
 Valdés Aguirre (2025). Automata and Prolog:
 https://docs.google.com/document/d/1RMGCGPHs4aLyfOTcwZJHSzQQlBP1uJYJe72jLIdcO7g/edit?tab=t.0
 
