@@ -1,5 +1,5 @@
 # AutomataDavid
-El lenguaje elegido para esta evidencia es el lenguaje elven, el lenguaje escogido es el idioma Élfico el cual fue inventado por Tolkien para los elfos de la película El señor de los Anillos. Este está formado por varias lenguas, como quenya y sindarin, su principal característica es que suena elegante y antiguo.
+El lenguaje elegido para esta evidencia es el lenguaje elven, tambien conocido como lenguaje Élfico el cual fue creado por J.R.R Tolkien para los elfos de la película El señor de los Anillos. Este no solo es un idioma, sino un conjunto de lenguas, entre las que destacan el quenya y el sindarin. Estas lenguas fueron diseñadas ccn estructuras complejas, incluyendo reglas gramaticales y sistemas de escritura propios y su principal característica es que suena elegante y antiguo. (Tolkien and Elvish Writing, 2019).
 
 Las palabras en elven son:
 
@@ -158,4 +158,6 @@ https://courses.grainger.illinois.edu/cs373/fa2013/Lectures/lec07.pdf
 
 Eibe Frank. (s. f.). En Chapter 6 Formal Language Theory
 https://www.its.caltech.edu/~matilde/FormalLanguageTheory.pdf 
+
+Viewsproject, (2019). Tolkien and Elvish Writing. https://crewsproject.wordpress.com/2019/07/29/tolkien-and-elvish-writing/
 
