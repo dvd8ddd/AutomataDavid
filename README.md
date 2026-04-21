@@ -118,6 +118,16 @@ Buenas prácticas y complejidad:
 
 En la implementación del autómata en prolog se siguieron buenas prácticas de programación ya que el código se organizó de manera clara. Primero se definieron las transiciones del autómata, después los estados finales y finalmente los predicados encargados de validar las cadenas. Se utilizaron nombres como transition, final_state, recover_automaton y automatonCheck, lo que facilita la lectura y comprensión del programa.
 
+Complejidad de Tiempo:
+La complejidad temporal del autómata es O(n), donde n representa la longitud de la cadena de entrada. Esto se debe a que el autómata finito determinista procesa cada símbolo de la cadena una vez, realizando una sola transición por carácter de forma secuencial
+y sin retrocesos. Por lo tanto, el numero total de operaciones es directamente proporcional a la longitud de entrada (Hopcroft, Motwani y Ullman, 2007). 
+Por ejemplo la palabra CERTAR tiene 6 caracteres, la cual tiene 6 transiciones: q0-q1-q11-q5-q16-q17-q18.
+
+La complejidad espacial es O(n) debido al uso de la recursión en la implementación en Prolog. De acuerdo con Cormen, Leiserson, Rivest y Stein)(2009), cada llamada 
+recursiva genera un marco en la pila de ejecución que permanece en la memoria hasta que la llamada se concluye. Dado que procesa un símbolo por llamada, la pila alcanza una profundidad
+igual a N.
+
+
 Codigo de la expresion regular:
 
 ^(calen|calma|carca|celeb|certar)$
@@ -162,3 +172,6 @@ https://www.its.caltech.edu/~matilde/FormalLanguageTheory.pdf
 
 Viewsproject, (2019). Tolkien and Elvish Writing. https://crewsproject.wordpress.com/2019/07/29/tolkien-and-elvish-writing/
 
+Hopcroft, J. E., Motwani, R., & Ullman, J. D. (2007). Introduction to automata theory, languages, and computation (3rd ed.). Pearson/Addison-Wesley. https://research.ebsco.com/linkprocessor/plink?id=e816bb24-f0bc-300f-8568-4bbab2aa72ee
+
+Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms (3rd ed.). MIT Press. https://research.ebsco.com/linkprocessor/plink?id=91dd2c4d-e376-3388-879c-312e0b4e9561
