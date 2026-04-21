@@ -142,6 +142,9 @@ En este trabajo se comprobó que el lenguaje propuesto puede representarse tanto
 
 El autómata finito se entiende mejor porque se puede dibujar y ver como funciona paso a paso, en cambio, la expresión regular es más corta y directa, por lo que resulta útil para escribir el código de forma más simple o para usarlo en programación (GeeksforGeeks,2026) . En general, este trabajo ayudó a comprender cómo se aplican los lenguajes regulares mediante dos herramientas distintas pero equivalentes.
 
+Link del regex: https://regex101.com/r/GvUovM/1
+
+
 
 Referencias
 
