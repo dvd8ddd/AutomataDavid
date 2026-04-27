@@ -69,7 +69,7 @@ liru= cantar alegremente
 Para este proyecto se toma una versión simplificada de estas características, enfocándose únicamente en la estructura básica de sujeto, verbo y objeto, así como en el uso de algunos sustantivos, verbos y conjunciones. 
 
 
-Gramática
+Gramática:
 El análisis de oraciones dentro de una gramática se relaciona con una de las fases fundamentales en el procesamiento del lenguaje: el análisis sintáctico. Esta etapa se encarga de verificar si una secuencia de oraciones cumple con las reglas definidas por una gramática formal, a diferencia del análisis léxico, que únicamente identifica los elementos básicos de la entrada.
 
 En este proyecto se emplea una gramática libre de contexto, la cual permite describir la estructura de un lenguaje. En el caso del Quenya, estas estructuras pueden entenderse a partir de estudios lingüísticos como La lengua de los Elfos: una gramática para el quenya de J.R.R Tolkien de González Baixauli, donde se describen las bases gramaticales del idioma y su organización (González Baixauli, s.f.). 
@@ -79,9 +79,6 @@ El analizador sintáctico toma una oración, la descompone en tokens y determina
 Para garantizar su funcionamiento adecuado, la gramática debe diseñarse de forma clara y sin ambigüedades, evitando que una misma entrada produzca múltiples interpretaciones. Esto facilita la construcción del árbol sintáctico y permite representar de manera ordenada la relación entre los elementos del lenguaje (Aho et al., 2006). 
 
 Gramatica inicial:
-
-
-
 La gramática propuesta permite formar oraciones simples a partir de un sujeto, un verbo y en algunos casos un objeto. Su regla principal permite dos estructuras: una oración completa con objeto y una oración corta sin objeto. Esto hace que el lenguaje sea fácil de analizar y adecuado para representar ejemplos básicos.
 
 El elemento NSC se utiliza para presentar un grupo nominal este grupo puede estar formado por un solo sustantivo o por varios sustantivos que están unidos mediante conectores como ar y hya. 
@@ -90,7 +87,6 @@ Ejemplo:
 angmari hosta valnori hya arnori ar istari
 
 En este ejemplo hay más de un conector, lo que genera confusión. Por esta razón, es importante revisar la gramática y asegurarse de que las reglas generen árboles sintácticos claros.
-
 
 
 Complejidad y jerarquía de Chomsky:
@@ -158,8 +154,6 @@ dori martir sili hya lini → las tierras actúan sobre los brillos o los cantos
 balrogi harya gondori ar istari → los demonios de fuego tienen reinos y magos
 angmari hosta valnori hya arnori → las tierras oscuras reúnen protectores o reinos antiguos
 
-
-
 Se incluye una gran cantidad de oraciones dentro del programa con el objetivo de probar de manera más completa el funcionamiento de la gramática. Y al tener múltiples ejemplos, es posible verificar que las reglas definidas funcionan correctamente.
 Oraciones incorrectas:
 narar corre lumar
@@ -174,18 +168,17 @@ Interpretación de resultados:
 Los resultados muestran que la gramática funciona correctamente. Las oraciones válidas generan un árbol sintáctico, mientras que las oraciones incorrectas son rechazadas por el programa.
 
 
-
 Buenas prácticas:
 El código usa funciones para separar partes del programa como separate() para dividir palabras con terminaciones y analyze() para revisar si una oración es válida. También se incluyen pruebas automáticas con oraciones correctas e incorrectas, lo que facilita comprobar que la gramática funciona.
-.
 
 Analysis
-ANÁLISIS ASINTÓTICO 
+ANÁLISIS ASINTÓTICO:
 Primero, es importante mencionar que algunas palabras del lenguaje deben separarse en raíz y terminación para que la gramática pueda reconocerlas correctamente. Por ejemplo, una palabra como narar se transforma en nara r. Esto se hace dentro de la función separate(), donde el programa revisa las palabras ingresadas y reemplaza aquellas que tienen una terminación definida.
 Antes de iniciar, es importante mencionar que algunas palabras del lenguaje deben separarse en raíz y terminación para que la gramática pueda reconocerlas correctamente. Por ejemplo, una palabra como narrar se transforma en nara r. Esto se hace dentro de la función separate(), donde el programa revisa las palabras ingresadas y reemplaza aquellas que no tienen una terminación definida.
 Este proceso utiliza un ciclo que recorre el diccionario de terminaciones, por lo que su complejidad depende de las palabras registradas en el diccionario.
 En las pruebas automáticas, el programa recorre la lista de oraciones con un ciclo for y analiza cada una con el parser. Como la gramática no genera múltiples árboles por oración válida, la complejidad general se mantiene en O(n)
-Otros métodos
+
+Otros métodos:
 Por supuesto existen otras formas de implementar este tipo de programa. Se podrían utilizar otras librerías de Python o incluso otros lenguajes de programación como JS. Una alternativa sería usar herramientas para crear parsers, como Peggy en Node.JS , donde la gramática se define en un archivo separado.
 
 Sin embargo, para este proyecto se eligió Python con NLTK porque permite definir la gramática y analizar las oraciones dentro de un mismo archivo. Lo que facilita la visualización. Además NLTK incluye herramientas para trabajar con gramáticas libres de contexto y generar árboles sintácticos. 
