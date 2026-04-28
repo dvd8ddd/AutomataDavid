@@ -156,7 +156,7 @@ dori martir sili hya lini → las tierras actúan sobre los brillos o los cantos
 balrogi harya gondori ar istari → los demonios de fuego tienen reinos y magos
 angmari hosta valnori hya arnori → las tierras oscuras reúnen protectores o reinos antiguos
 
-Imagen de las oracionesa:
+Imagen de las oraciones:
 ![Oraciones](oraciones.png)
 
 Se incluye una gran cantidad de oraciones dentro del programa con el objetivo de probar de manera más completa el funcionamiento de la gramática. Y al tener múltiples ejemplos, es posible verificar que las reglas definidas funcionan correctamente.
@@ -172,9 +172,13 @@ valnori hya hosta arnori
 Interpretación de resultados: 
 Los resultados muestran que la gramática funciona correctamente. Las oraciones válidas generan un árbol sintáctico, mientras que las oraciones incorrectas son rechazadas por el programa.
 Resultados:
+
 ![Resultado](arbol1.png)
+
 ![Resultado](arbol2.png)
+
 ![Resultado](arbol3.png)
+
 ![Resultado](arbol4.png)
 
 Buenas prácticas:
