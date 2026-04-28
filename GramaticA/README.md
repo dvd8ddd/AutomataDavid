@@ -111,10 +111,27 @@ Ejemplo:
 NSC -> NSCP NSC_A 
 Esta gramática se adapta mejor como CFG ya que permite representar estructuras un poco más completas, como sujeto, verbo, objeto y conjunciones.
 
-**Ambigüedad y recursión izquierda:**
+**Ambigüedad y Recursión Izquierda**
 
-En la gramática se redujo la ambigüedad al definir una estructura clara para las conjunciones. La regla NSC_A -> Conj NSCP NSC_A | Empty permite agregar más sustantivos de forma ordenada, evitando que una misma oración tenga varias interpretaciones posibles. De esta manera, cada oración válida genera un árbol sintáctico más consistente.
-Además, en el código se evita la recursión izquierda, ya que puede generar problemas en el análisis sintáctico. En su lugar se utiliza la recursión hacia la derecha, lo que permite procesar oraciones de forma más ordenada y facilita la construcción del árbol sintáctico
+Problema Original 
+La gramática inicial presentaba una regla que podía generar ambigüedad al permitir múltiples interpretaciones para una misma oración con varios sustantivos conectados
+
+NSC -> NS 
+NSC -> NS Conj NSC 
+
+Esta regla tiene recursión izquierda implícita y genera ambigüedad porque una oracion como:
+valnori hya arnori ar istari
+
+Podría parsearse de dos formas distintas, produciendo árboles diferentes para la misma entrada
+
+Solución aplicado
+
+Se transformó la regla en una estructura recursiva por la derecha, separando el nucleo del sustantivo de las conjunciones adicionales:
+NSC -> NSCP NSC_A 
+NSC_A -> Conj NSCP NSC_A 
+NSC_A -> Empty 
+
+Funciona porque la regla NSC_A -> Conj NSCP NSC_A | Empty  obliga al parser a procesar los sustantivos de izquierda a derecha de forma ordenada. Cada conjunción introduce exactamente un nuevo sustantivo antes de continuar o terminar con EMPTY, eliminando cualquier posibilidad de bifurcación en el árbol.
 
 **Explicación gramatical:**
 
