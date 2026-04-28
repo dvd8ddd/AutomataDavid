@@ -173,6 +173,7 @@ balrogi harya gondori ar istari → los demonios de fuego tienen reinos y magos
 angmari hosta valnori hya arnori → las tierras oscuras reúnen protectores o reinos antiguos
 
 Imagen de las oraciones:
+
 ![Oraciones](oraciones.png)
 
 Se incluye una gran cantidad de oraciones dentro del programa con el objetivo de probar de manera más completa el funcionamiento de la gramática. Y al tener múltiples ejemplos, es posible verificar que las reglas definidas funcionan correctamente.
