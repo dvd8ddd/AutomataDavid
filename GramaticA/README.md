@@ -23,6 +23,9 @@ nara: narar
 dor: dori
 rima: rimali
 
+Imagen Conjugaciones:
+![Conjugaciones](conjugaciones.png)
+
 Conjunciones
 ar: y
 hya: o
