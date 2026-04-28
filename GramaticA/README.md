@@ -79,6 +79,8 @@ El analizador sintáctico toma una oración, la descompone en tokens y determina
 Para garantizar su funcionamiento adecuado, la gramática debe diseñarse de forma clara y sin ambigüedades, evitando que una misma entrada produzca múltiples interpretaciones. Esto facilita la construcción del árbol sintáctico y permite representar de manera ordenada la relación entre los elementos del lenguaje (Aho et al., 2006). 
 
 Gramatica inicial:
+Imagen del autómata:
+![gramatica](https://github.com/user-attachments/assets/ed689f69-e581-4932-bc2c-f8acb523783a)
 La gramática propuesta permite formar oraciones simples a partir de un sujeto, un verbo y en algunos casos un objeto. Su regla principal permite dos estructuras: una oración completa con objeto y una oración corta sin objeto. Esto hace que el lenguaje sea fácil de analizar y adecuado para representar ejemplos básicos.
 
 El elemento NSC se utiliza para presentar un grupo nominal este grupo puede estar formado por un solo sustantivo o por varios sustantivos que están unidos mediante conectores como ar y hya. 
