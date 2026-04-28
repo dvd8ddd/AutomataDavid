@@ -173,6 +173,10 @@ balrogi harya ar istari
 gondori savin istari ar
 valnori hya hosta arnori
 
+Imagen de las oraciones rechazadas:
+
+![Rechazo](rechazodeoraciones.png)
+
 Interpretación de resultados: 
 Los resultados muestran que la gramática funciona correctamente. Las oraciones válidas generan un árbol sintáctico, mientras que las oraciones incorrectas son rechazadas por el programa.
 Resultados:
