@@ -278,7 +278,8 @@ https://www.elvish.org/VT/
 
 González Baixauli, L. (1999). La lengua de los Elfos: Una gramática para el quenya de J.R.R. Tolkien: Tengwesta kwenyava. Minotauro. 
 https://research.ebsco.com/c/oefy3m/search/details/dtl4tfmgur/details?q=Lengua+de+los+Elfos
-Mccullough, B. (s.f.). Frases y vocabulario en élfico. Scribd. https://es.scribd.com/doc/247032936/Palabras-en-Elfico?utm_source=
+
+Frases y vocabulario en élfico. Scribd. https://es.scribd.com/doc/247032936/Palabras-en-Elfico?utm_source=
 
 Fandom. (s.f.). Elvish word list. The One Wiki to Rule Them All.
 https://lotr.fandom.com/wiki/Elvish_word_list?utm_source=
