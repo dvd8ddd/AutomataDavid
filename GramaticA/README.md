@@ -1,5 +1,6 @@
 #David ALejandro Robles Camacho A01277315
 
+
 El Quenya es el idioma de los Altos Elfos, los Noldor, quienes viajaron a la Tierra Media desde Valinor. Para el habla o comunicación cotidiana entre los elfos, el idioma fue reemplazado en gran medida por su lengua hermana, el Sindarin. Por esta razón, Tolkien lo consideraba una especie de “latin-élfico”, utilizado principalmente en contextos formales, literarios y rituales.(Tolkien, 1954; Noel, 1974). 
 
 Generalmente se dividen las etapas del desarrollo del Quenya en tres periodos:
@@ -11,11 +12,11 @@ Esta evolución muestra como Tolkien fue modificando y refinando el idioma a lo 
 
 Como primer idioma con un sistema de escritura, el Quenya tenía una extensa tradición literaria, mayor que la de otros idiomas élficos. El Quenya se mantuvo como idioma de los eruditos, que se fue extendiendo y llegó especialmente a los Numenoreanos. El idioma también era un idioma ritual prominente en la academia y la religión.
 
-Estructura Gramatical:
+**Estructura Gramatical:**
 
 El quenya es principalmente un idioma “aglutinante”, un término lingüístico para idiomas que modifican palabras con numerosos sufijos que alteran el significado, a diferencia del inglés que es un idioma “aislante” con pocos sufijos gramaticales.
 
-Reglas del plural:
+**Reglas del plural:**
 El plural se forma principalmente agregando sufijos a la raíz del sustantivo. Los sufijos más comunes son -r, -i y -li. En general, -r se usa con palabras que terminan en vocal, mientras que -i aparece en otros tipos de sustantivos. El sufijo -li se relaciona con una forma plural partitiva. Esto coincide con la idea de que el Quenya es un idioma aglutinante, donde las palabras cambian mediante terminaciones.(Gilson, 1996; Tolkien Gateway, s.f.). 
 
 Ejemplo:
@@ -32,7 +33,7 @@ ar: y
 hya: o
 
 
-Orden de palabras:
+**Orden de palabras:**
 El Quenya era un idioma aglutinante con orden SVO (sujeto-verbo-objeto). Esto significa que primero aparece quien realiza la acción, después el verbo y finalmente el elemento que recibe la acción.
 
 Ejemplo: 
@@ -41,7 +42,7 @@ sujeto: narar
 verbo: martir
 objeto: lumar
 
-Sustantivos: 
+**Sustantivos:**
 En Quenya, los sustantivos nombran personas, objetos o lugares y pueden cambiar mediante sufijos para indicar número, como singular o plural.
 elen → estrella
 aran → rey
@@ -53,7 +54,7 @@ lassë → hoja
 nér → hombre / varón
 
 
-Verbos:
+**Verbos:**
 
 Se dividen en tres grupos: 
 -Los verbos básicos derivados de una raíz verbal primitiva
@@ -73,7 +74,7 @@ liru= cantar alegremente
 Para este proyecto se toma una versión simplificada de estas características, enfocándose únicamente en la estructura básica de sujeto, verbo y objeto, así como en el uso de algunos sustantivos, verbos y conjunciones. 
 
 
-Gramática:
+**Gramática:**
 El análisis de oraciones dentro de una gramática se relaciona con una de las fases fundamentales en el procesamiento del lenguaje: el análisis sintáctico. Esta etapa se encarga de verificar si una secuencia de oraciones cumple con las reglas definidas por una gramática formal, a diferencia del análisis léxico, que únicamente identifica los elementos básicos de la entrada.
 
 En este proyecto se emplea una gramática libre de contexto, la cual permite describir la estructura de un lenguaje. En el caso del Quenya, estas estructuras pueden entenderse a partir de estudios lingüísticos como La lengua de los Elfos: una gramática para el quenya de J.R.R Tolkien de González Baixauli, donde se describen las bases gramaticales del idioma y su organización (González Baixauli, s.f.). 
@@ -82,9 +83,12 @@ El analizador sintáctico toma una oración, la descompone en tokens y determina
 
 Para garantizar su funcionamiento adecuado, la gramática debe diseñarse de forma clara y sin ambigüedades, evitando que una misma entrada produzca múltiples interpretaciones. Esto facilita la construcción del árbol sintáctico y permite representar de manera ordenada la relación entre los elementos del lenguaje (Aho et al., 2006). 
 
-Gramatica inicial:
-Imagen del autómata:
+**Gramatica inicial:**
+
+Imagen de la gramática:
+
 ![Gramatica](gramatica.png)
+
 La gramática propuesta permite formar oraciones simples a partir de un sujeto, un verbo y en algunos casos un objeto. Su regla principal permite dos estructuras: una oración completa con objeto y una oración corta sin objeto. Esto hace que el lenguaje sea fácil de analizar y adecuado para representar ejemplos básicos.
 
 El elemento NSC se utiliza para presentar un grupo nominal este grupo puede estar formado por un solo sustantivo o por varios sustantivos que están unidos mediante conectores como ar y hya. 
@@ -94,19 +98,21 @@ angmari hosta valnori hya arnori ar istari
 
 En este ejemplo hay más de un conector, lo que genera confusión. Por esta razón, es importante revisar la gramática y asegurarse de que las reglas generen árboles sintácticos claros.
 
+**Complejidad y jerarquía de Chomsky:**
 
-Complejidad y jerarquía de Chomsky:
 La gramática que se usó en el proyecto es una gramática libre de contexto, también conocida como tipo 2 en la jerarquía de Chomsky. Esto se debe a que del lado izquierdo de cada regla siempre hay un solo símbolo, no terminal, mientras que del lado derecho puede haber varios símbolos ya sean terminales o no terminales.
 No se considera una gramática regular porque algunas reglas tiene  más de un elemento del lado derecho:
 Ejemplo:
 NSC -> NSCP NSC_A 
 Esta gramática se adapta mejor como CFG ya que permite representar estructuras un poco más completas, como sujeto, verbo, objeto y conjunciones.
 
-Ambigüedad y recursión izquierda:
+**Ambigüedad y recursión izquierda:**
+
 En la gramática se redujo la ambigüedad al definir una estructura clara para las conjunciones. La regla NSC_A -> Conj NSCP NSC_A | Empty permite agregar más sustantivos de forma ordenada, evitando que una misma oración tenga varias interpretaciones posibles. De esta manera, cada oración válida genera un árbol sintáctico más consistente.
 Además, en el código se evita la recursión izquierda, ya que puede generar problemas en el análisis sintáctico. En su lugar se utiliza la recursión hacia la derecha, lo que permite procesar oraciones de forma más ordenada y facilita la construcción del árbol sintáctico
 
-Explicación gramatical:
+**Explicación gramatical:**
+
 La gramática implementada corresponde a un gramática libre de contexto, ya que todas sus reglas siguen la forma A→ α , donde un símbolo no terminal se sustituye por una combinación de terminales y no terminales.
 La estructura principal del lenguaje se define mediante la regla:
 S → NSC VS NSC | NSC VS 
@@ -119,14 +125,14 @@ Estas reglas permiten que los sustantivos se unan mediante conjunciones como ar 
 NSCP representa un sustantivo simple:
 NSCP–NS
 A su vez, los sustantivos que están representados como NS se dividen en tres tipos y cada una tiene sus propias combinaciones::
-.Vo: sustantivos que terminan en vocal, su combinación es VoR VoE
+Vo: sustantivos que terminan en vocal, su combinación es VoR VoE
 E: raíces cortas, su combinación es ER EE
 C: raíces más complejas y largas, su combinación es CR CE
 Estas terminaciones permiten generar formas como plural o variaciones simples mediante sufijos como r, i o li, reflejando la naturaleza aglutinante del lenguaje.
 Los verbos (VS) representan acciones dentro de la oración y forman el núcleo del predicado. Ejemplos de estos son: martir, harya, hosta, síla, entre otros.
 Finalmente, el símbolo EMPTY representa una producción vacia, lo que permite que ciertas  reglas sean opcionales dentro de la gramática
 
-Implementación:
+**Implementación:**
 Para llevar a cabo la creación del árbol sintáctico y de la gramática se creo un código en el lenguaje Python, que previamente nos proporcionó el profesor para guiarnos
 Oraciones correctas:
 narar martir lumar → los fuegos actúan sobre las nubes
@@ -177,7 +183,8 @@ Imagen de las oraciones rechazadas:
 
 ![Rechazo](rechazodeoraciones.png)
 
-Interpretación de resultados: 
+**Interpretación de resultados:**
+
 Los resultados muestran que la gramática funciona correctamente. Las oraciones válidas generan un árbol sintáctico, mientras que las oraciones incorrectas son rechazadas por el programa.
 Resultados:
 
@@ -189,10 +196,12 @@ Resultados:
 
 ![Resultado](arbol4.png)
 
-Buenas prácticas:
+**Buenas prácticas:**
+
 El código usa funciones para separar partes del programa como separate() para dividir palabras con terminaciones y analyze() para revisar si una oración es válida. También se incluyen pruebas automáticas con oraciones correctas e incorrectas, lo que facilita comprobar que la gramática funciona.
 
-Analysis
+**Analysis**
+
 ANÁLISIS ASINTÓTICO:
 Primero, es importante mencionar que algunas palabras del lenguaje deben separarse en raíz y terminación para que la gramática pueda reconocerlas correctamente. Por ejemplo, una palabra como narar se transforma en nara r. Esto se hace dentro de la función separate(), donde el programa revisa las palabras ingresadas y reemplaza aquellas que tienen una terminación definida.
 Antes de iniciar, es importante mencionar que algunas palabras del lenguaje deben separarse en raíz y terminación para que la gramática pueda reconocerlas correctamente. Por ejemplo, una palabra como narrar se transforma en nara r. Esto se hace dentro de la función separate(), donde el programa revisa las palabras ingresadas y reemplaza aquellas que no tienen una terminación definida.
