@@ -80,7 +80,7 @@ Para garantizar su funcionamiento adecuado, la gramática debe diseñarse de for
 
 Gramatica inicial:
 Imagen del autómata:
-![gramatica](https://github.com/user-attachments/assets/ed689f69-e581-4932-bc2c-f8acb523783a)
+![gramatica]
 La gramática propuesta permite formar oraciones simples a partir de un sujeto, un verbo y en algunos casos un objeto. Su regla principal permite dos estructuras: una oración completa con objeto y una oración corta sin objeto. Esto hace que el lenguaje sea fácil de analizar y adecuado para representar ejemplos básicos.
 
 El elemento NSC se utiliza para presentar un grupo nominal este grupo puede estar formado por un solo sustantivo o por varios sustantivos que están unidos mediante conectores como ar y hya. 
