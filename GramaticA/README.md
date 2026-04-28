@@ -16,6 +16,7 @@ Como primer idioma con un sistema de escritura, el Quenya tenía una extensa tra
 
 El quenya es principalmente un idioma “aglutinante”, un término lingüístico para idiomas que modifican palabras con numerosos sufijos que alteran el significado, a diferencia del inglés que es un idioma “aislante” con pocos sufijos gramaticales.
 
+
 **Reglas del plural:**
 
 El plural se forma principalmente agregando sufijos a la raíz del sustantivo. Los sufijos más comunes son -r, -i y -li. En general, -r se usa con palabras que terminan en vocal, mientras que -i aparece en otros tipos de sustantivos. El sufijo -li se relaciona con una forma plural partitiva. Esto coincide con la idea de que el Quenya es un idioma aglutinante, donde las palabras cambian mediante terminaciones.(Gilson, 1996; Tolkien Gateway, s.f.). 
@@ -135,6 +136,7 @@ Funciona porque la regla NSC_A -> Conj NSCP NSC_A | Empty  obliga al parser a pr
 
 **Explicación gramatical:**
 
+
 La gramática implementada corresponde a un gramática libre de contexto, ya que todas sus reglas siguen la forma A→ α , donde un símbolo no terminal se sustituye por una combinación de terminales y no terminales.
 La estructura principal del lenguaje se define mediante la regla:
 S → NSC VS NSC | NSC VS 
@@ -155,6 +157,7 @@ Los verbos (VS) representan acciones dentro de la oración y forman el núcleo d
 Finalmente, el símbolo EMPTY representa una producción vacia, lo que permite que ciertas  reglas sean opcionales dentro de la gramática
 
 **Implementación:**
+
 
 Para llevar a cabo la creación del árbol sintáctico y de la gramática se creo un código en el lenguaje Python, que previamente nos proporcionó el profesor para guiarnos
 Oraciones correctas:
