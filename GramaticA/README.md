@@ -25,9 +25,9 @@ nara: narar
 dor: dori
 rima: rimali
 
-Imagen Conjugaciones:
+Imagen plural:
 
-![Conjugaciones](conjugaciones.png)
+![Conjugaciones](conjugaciones1.png)
 
 Conjunciones
 ar: y
