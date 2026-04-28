@@ -24,6 +24,7 @@ dor: dori
 rima: rimali
 
 Imagen Conjugaciones:
+
 ![Conjugaciones](conjugaciones.png)
 
 Conjunciones
