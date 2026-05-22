@@ -84,7 +84,7 @@ Otra forma de resolver este problema sería usando programación imperativa en C
 
 En cambio, con Prolog las relaciones pueden modelarse directamente como hechos y reglas lógicas. Esto hace que la solución sea más sencilla de leer, ya que Prolog puede deducir automáticamente nuevas relaciones mediante inferencia lógica 
 
-Referencias
+**Referencias**
 
 
 Codeforces. (2016). Mahmoud and a Dictionary (Problem 766D). https://codeforces.com/problemset/problem/766/D 
