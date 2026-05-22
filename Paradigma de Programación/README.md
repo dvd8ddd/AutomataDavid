@@ -68,13 +68,13 @@ Si no existe ninguna relación conocida entre dos palabras (como phone y compute
 **Ejecución con main**
 El predicado main/0 ejecuta 10 pruebas que demuestran los tres casos posibles:
 
-| Columna 1 | Columna 2 | Columna 3 |
-| Prueba| Par | Resultado|
-| 1|love/like | Sinónimos|
-| 2| like/hate | Antónimos |
-| 3| big/small | Antónimos |
-| 5| happy/sad | Antónimos |
-| 10| phone/computer| Sin relación |
+| Prueba | Par              | Resultado esperado |
+|---------|------------------|--------------------|
+| 1       | love / like      | Sinónimos          |
+| 2       | like / hate      | Antónimos          |
+| 3       | big / small      | Antónimos          |
+| 5       | happy / sad      | Antónimos          |
+| 10      | phone / computer | Sin relación       |
 
 Esto permite que el programa razone de forma parecida a una base de datos; si se consulta una relacion que no fue declarada explicitamente pero puede inferirse mediante las reglas. Prolog la deduce automaticamente. Si no existe ninguna relación ni directa , ni inferida el sistema lo indica sin generar una contradicción.
 
