@@ -1,6 +1,10 @@
-El problema que escogí se llama Mahmoud and a Dictionary. En este problema se tiene un conjunto de palabras y diferentes relaciones entre ellas. Las relaciones pueden indicar que dos palabras son sinónimos o que son antónimos. A partir de estas relaciones iniciales, el sistema debe ser capaz de deducir nuevas relaciones automáticamente usando lógica transitiva(Russell & Norvig, 2020, p. 258). Por ejemplo: “happy” es un sinónimo de “joyful” y “joyful” es un antónimo de “sad”, entonces automáticamente “happy” también será antónimo de “sad”.
+El problema que escogí se llama Mahmoud and a Dictionary. En este problema se tiene un conjunto de palabras y diferentes relaciones entre ellas. Las relaciones pueden indicar que dos palabras son sinónimos o que son antónimos. A partir de estas relaciones iniciales, el sistema debe ser capaz de deducir nuevas relaciones automáticamente usando lógica transitiva(Russell & Norvig, 2020, p. 258). 
 
-El reto principal es detectar contradicciones. Puede ocurrir que se intente agregar una relación que rompa la consistencia del conocimiento almacenado. (Brachman & Levesque, 2004, p. 41). Ejemplo: Si previamente se sabía que dos palabras eran opuestas y después se intenta registrar que significan lo mismo, esa nueva relación debe rechazarse. 
+Por ejemplo: “happy” es un sinónimo de “joyful” y “joyful” es un antónimo de “sad”, entonces automáticamente “happy” también será antónimo de “sad”.
+
+El reto principal es detectar contradicciones. Puede ocurrir que se intente agregar una relación que rompa la consistencia del conocimiento almacenado. (Brachman & Levesque, 2004, p. 41). 
+
+Ejemplo: Si previamente se sabía que dos palabras eran opuestas y después se intenta registrar que significan lo mismo, esa nueva relación debe rechazarse. 
 
 El programa tiene que responder YES cuando una relación es válida y no cuando genera contradicción. Al final también se deben responder consultas indicando si dos palabras son sinónimos, antónimos o si no existe relación conocida entre ellas.
 
@@ -12,7 +16,7 @@ like antónimo de hate=YES
 love antónimo de hate= inferido automáticamente
 love sinónimo de hate= NO
 
-Modelo de la solución:
+**Modelo de la solución:**
 
 La técnica utilizada es el paradigma lógico, modelando el problema como un base de conocimiento formada por hechos y reglas. En lugar de usar estructuras avanzadas como Unión-find con paridades, representa directamente las relaciones entre palabras mediante predicados dinámicos.
 
@@ -24,7 +28,7 @@ Donde synonym(X, Y) significa que dos palabras son sinónimas y antonym(X, Y) si
 synonym(love, like).
 antonym(love, hate).
 
-Reglas de inferencia
+**Reglas de inferencia**
 
 A partir de esos hechos, Prolog puedo inferir nuevas relaciones usando reglas lógicas:
 
@@ -44,7 +48,7 @@ opposite(X,Z) :-
 
 Esto permite deducir automáticamente que happy es antónimo de sad, porque happy es sinónimo de joyful, o que hablando de otro ejemplo like es antónimo de hate porqué like es sinónimo de love y love es antónimo de hate.
 
-Respuesta
+**Respuesta**
 El predicado answer/2 clasifica la relación entre dos palabras e imprime:
 answer(X, Y) :-
     same(X, Y),
@@ -61,8 +65,24 @@ answer(X, Y) :-
 
 Si no existe ninguna relación conocida entre dos palabras (como phone y computer), el sistema responde con la opción 3 usando negación por falla, que es una forma de razonamiento por omisión de Prolog.
 
+**Ejecución con main**
+El predicado main/0 ejecuta 10 pruebas que demuestran los tres casos posibles:
 
+| Columna 1 | Columna 2 | Columna 3 |
+| Prueba| Par | Resultado|
+| 1|love/like | Sinónimos|
+| 2| like/hate | Antónimos |
+| 3| big/small | Antónimos |
+| 5| happy/sad | Antónimos |
+| 10| phone/computer| Sin relación |
 
+Esto permite que el programa razone de forma parecida a una base de datos; si se consulta una relacion que no fue declarada explicitamente pero puede inferirse mediante las reglas. Prolog la deduce automaticamente. Si no existe ninguna relación ni directa , ni inferida el sistema lo indica sin generar una contradicción.
+
+**Comparación con paradigma imperativo**
+
+Otra forma de resolver este problema sería usando programación imperativa en C++ o en Java. En ese caso se podrían usar arreglos, grafos o estructuras Union-Find para almacenar las relaciones entre palabras. La ventaja de este enfoque es que suele ser más rápido y eficiente para grandes cantidades de datos. Sin embargo, el código se vuelve más complejo porque las inferencias y relaciones deben programarse manualmente mediante ciclos.
+
+En cambio, con Prolog las relaciones pueden modelarse directamente como hechos y reglas lógicas. Esto hace que la solución sea más sencilla de leer, ya que Prolog puede deducir automáticamente nuevas relaciones mediante inferencia lógica 
 
 Referencias
 
