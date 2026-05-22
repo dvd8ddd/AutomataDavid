@@ -18,7 +18,7 @@ love sinónimo de hate= NO
 
 **Modelo de la solución:**
 
-La técnica utilizada es el paradigma lógico, modelando el problema como un base de conocimiento formada por hechos y reglas. En lugar de usar estructuras avanzadas como Unión-find con paridades, representa directamente las relaciones entre palabras mediante predicados dinámicos.
+La técnica utilizada es el paradigma lógico, modelando el problema como una base de conocimiento formada por hechos y reglas. En lugar de usar estructuras avanzadas como Unión-find con paridades, representa directamente las relaciones entre palabras mediante predicados dinámicos.
 
 synonym(X, Y).
 antonym(X, Y).
@@ -42,7 +42,7 @@ Las reglas same y opposite hacen que las relaciones son simétricas, si A es sin
 También se agregan reglas transitivas. Por ejemplo, si x es sinónimo de Y y Y es antónimo de Z:
 
 opposite(X,Z) :-
-      same(X, Y):-
+      same(X, Y),
       antonym(Y, Z).
 
 
@@ -82,7 +82,7 @@ Esto permite que el programa razone de forma parecida a una base de datos; si se
 
 Otra forma de resolver este problema sería usando programación imperativa en C++ o en Java. En ese caso se podrían usar arreglos, grafos o estructuras Union-Find para almacenar las relaciones entre palabras. La ventaja de este enfoque es que suele ser más rápido y eficiente para grandes cantidades de datos. Sin embargo, el código se vuelve más complejo porque las inferencias y relaciones deben programarse manualmente mediante ciclos.
 
-En cambio, con Prolog las relaciones pueden modelarse directamente como hechos y reglas lógicas. Esto hace que la solución sea más sencilla de leer, ya que Prolog puede deducir automáticamente nuevas relaciones mediante inferencia lógica 
+En cambio, con Prolog las relaciones pueden modelarse directamente como hechos y reglas lógicas. Esto hace que la solución sea más sencilla de leer, ya que Prolog puede deducir automáticamente nuevas relaciones mediante inferencia lógica.
 
 **Referencias**
 
