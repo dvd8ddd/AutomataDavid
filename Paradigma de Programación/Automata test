@@ -1,0 +1,22 @@
+91 ?- main.
+Prueba 1
+love y like ->1 -> son sinonimos
+Prueba 2
+like y hate ->2 -> son antonimos
+Prueba 3
+big y small ->2 -> son antonimos
+Prueba 4
+happy y joyful ->1 -> son sinonimos
+Prueba 5
+happy, sad ->2 -> son antonimos
+Prueba 6
+car y automobile ->1 -> son sinonimos
+Prueba 7
+friend y enemy ->2 -> son antonimos
+Prueba 8
+hot y cold ->2 -> son antonimos
+Prueba 9
+student y pupil ->1 -> son sinonimos
+Prueba 10
+phone y computer ->3 -> No tienen relacion
+true 
