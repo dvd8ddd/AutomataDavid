@@ -144,7 +144,7 @@ Por otra parte, la solución con expresión regular también fue adecuada ya que
 Comparar soluciones:
 
 El autómata finito y la expresión regular son dos formas de representar el mismo lenguaje. El autómata permite ver con mayor claridad los estados, las transiciones y el recorrido de cada cadena, mientras que la expresión regular resume el lenguaje de mejor forma más compacta (GeeksforGeeks, 2026). 
-Además la University of Illinois explica que los lenguajes regulares pueden representarse mediante DFA (autómata finito determinista) o NFA (autómata finito no determinista) o una expresión regular, lo que confirma que ambas soluciones utilizadas son válidas. (University of Illinois,2013).
+Además la University of Illinois explica que los lenguajes regulares pueden representarse mediante DFA (autómata finito determinista) o NFA (autómata finito no determinista) o una expresión regular, lo que confirma que ambas soluciones utilizadas son válidas. La elección de una u otra depende del contexto, el autómata es recomendado cuando se require una "claridad" en el proceso, mientras que la expresión regular es mas recomendada cuando se busca algo más simple en la implementación (University of Illinois,2013).
 
 Conclusiones 
 
