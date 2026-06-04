@@ -237,9 +237,34 @@ En las pruebas automáticas, el programa recorre la lista de oraciones con un ci
 
 Otros métodos:
 
-Por supuesto existen otras formas de implementar este tipo de programa. Se podrían utilizar otras librerías de Python o incluso otros lenguajes de programación como JS. Una alternativa sería usar herramientas para crear parsers, como Peggy en Node.JS , donde la gramática se define en un archivo separado.
+Por supuesto existen otras formas de implementar este tipo de programa. Se podrían utilizar otras librerías de Python o incluso otros lenguajes de programación como JS. Una alternativa sería usar herramientas para crear parsers, como Peggy en Node.JS , donde la gramática se define en un archivo separado y la herramienta genera automáticamente el parser en JS. Esto es util si se quiere implementar a una aplicación web pero desgraciadamente tiene una desventaja que no genera árboles sintacticos de forma visual como lo hace NLTK, lo que dificultaria la visualización y la verificación del funcionamiento de la gramática.
+
 
 Sin embargo, para este proyecto se eligió Python con NLTK porque permite definir la gramática y analizar las oraciones dentro de un mismo archivo. Lo que facilita la visualización. Además NLTK incluye herramientas para trabajar con gramáticas libres de contexto y generar árboles sintácticos. 
+
+Eliminar la recursión izquierda:
+Al diseñar la gramática del lenguaje, se detecto que el grupo nominal tenia un problema de recursión izquierda.
+La regla era:
+NSC-> NS NSC
+NSC-> NS Conj NSC
+
+Este tipo de regla es problematica porque cuando el parser intenta analizar un grupo nominal, lo primero que hace es intentar expandir NSC con otra NSC al inicio. Esto hace que el analizador entre en un ciclo infinito antes de poder leer cualquier palabra, lo que produce errores en el análisis.
+
+Por ejemplo, con la oracion VALNORI HYA ARNORI AR ISTARI, el parser con recursión izquierda intentaria:
+NSC-> NS NSC -> NS NS NSC -> NSC 
+
+En este ejemplo se puede observar que se llama asi mismo al inicio y crea un ciclo interminable.
+
+Para eliminar con la recursión izquierda, se cambió la forma de la regla para que no se llamara desde el inicio. En vez de que NSC volviera a llamarse a si misma, se separó primero el sustantivo principal y despues se agregaron las conjunciones con una regla llamada NSC_A
+
+NSC -> NSCP NSC_A
+NSC -> Conj NSCP NSC_A
+NSC_A -> Empty //caso base (para que no haya recursión infinita)
+
+Con esta estructura, el parser siempre lee primero un sustantivo (NSCP) antes de intentar cualquier recursión. Si en caso que tenga otra conjunción (como ar, hya) se lee otro sustantivo y se repite el proceso.
+
+
+Para solucionar esto, se cambió la forma de la regla para que no se repitiera desde el inicio. En vez de que NSC volviera a llamarse a sí misma al principio, se separó primero el sustantivo principal y después se agregaron las conjunciones con una regla extra llamada NSC_A.
 
 En conclusión, usar Python y NLTK fue una opción adecuada porque permite implementar la gramática de forma clara, probar oraciones válidas e inválidas, y visualizar los árboles sintácticos de manera directa. En lo personal algo que me ayudó a concluir el programa es que las funciones de Python son muy intuitivas.
 
