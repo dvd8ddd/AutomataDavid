@@ -49,6 +49,7 @@ opposite(X,Z) :-
 Esto permite deducir automáticamente que happy es antónimo de sad, porque happy es sinónimo de joyful, o que hablando de otro ejemplo like es antónimo de hate porque like es sinónimo de love y love es antónimo de hate.
 
 **Respuesta**
+
 El predicado answer/2 clasifica la relación entre dos palabras e imprime:
 answer(X, Y) :-
     same(X, Y),
@@ -66,6 +67,7 @@ answer(X, Y) :-
 Si no existe ninguna relación conocida entre dos palabras (como phone y computer), el sistema responde con la opción 3 usando negación por falla, que es una forma de razonamiento por omisión de Prolog.
 
 **Ejecución con main**
+
 El predicado main/0 ejecuta 10 pruebas que demuestran los tres casos posibles:
 
 | Prueba | Par              | Resultado esperado |
@@ -81,6 +83,7 @@ Con esto, el programa no solo guarda relaciones directas,  sino que tambien pued
 
 
 **Complejidad de tiempo**
+
 En cuanto a la complejidad, cada consulta se puede aproximar a O(1) , porque la base de conocimiento o de "datos" para decirlo de forma más sencilla tiene una cantidad fija de hechos y reglas. En otras palabras no crece dependiendo de lo que escriba el usuario, solo revisa lo que ya está declarado. Aunque Prolog internamente revisa los hechos y reglas que ya fueron declarados previamente para encontrar una coincidencia. Por eso, el tiempo de búsqueda puede considerarse constante. De igual manera, la complejidad espacial también es O(1) debido a que el espacio utilizado en la memoria permanece fijo y no aumenta dependiendo del número de consultas realizadas (Clocksin & Mellish, 2003).
 
 
